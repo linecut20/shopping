@@ -1,4 +1,4 @@
-import 'body.dart';
+import 'main/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping/constraints.dart';
@@ -42,6 +42,7 @@ class MainPage extends StatelessWidget {
 
 AppBar topAppBar() {
   return AppBar(
+    backgroundColor: Colors.transparent,
     elevation: 0,
     leading: IconButton(
       icon: SvgPicture.asset("assets/icons/back.svg"),
@@ -60,7 +61,8 @@ AppBar topAppBar() {
         ),
         color: textColor,
         onPressed: () {},
-      )
+      ),
+      SizedBox(width: 10,)
     ],
   );
 }

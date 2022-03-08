@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
-import 'package:shopping/main_product_item.dart';
-import 'product.dart';
+import 'package:shopping/main/main_product_item.dart';
+import '../product.dart';
 import 'categories.dart';
 
 class Body extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constraints.dart';
+import '../constraints.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);

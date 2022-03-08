@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'constraints.dart';
-import 'product.dart';
+import 'package:shopping/detail/body.dart';
+import '../product.dart';
 
 class DetailScreen extends StatelessWidget {
   final Product product;
@@ -14,28 +14,30 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: product.color,
       appBar: AppBar(
+        backgroundColor: product.color,
         elevation: 0,
         leading: IconButton(
-          icon: SvgPicture.asset("assets/icons/back.svg"),
+          icon: SvgPicture.asset("assets/icons/back.svg", color: Colors.white,),
           onPressed: () => Navigator.pop(context),
         ),
         actions: [
           IconButton(
             icon: SvgPicture.asset("assets/icons/search.svg",
-              color: textColor,
+              color: Colors.white,
             ),
             onPressed: () {},
           ),
           IconButton(
             icon: SvgPicture.asset("assets/icons/cart.svg",
-              color: textColor,
+              color: Colors.white,
             ),
-            color: textColor,
             onPressed: () {},
-          )
+          ),
+          SizedBox(width: 10)
         ],
       ),
 
+      body: Body(product: product),
     );
   }
 }
