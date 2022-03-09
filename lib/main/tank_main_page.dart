@@ -4,10 +4,14 @@ import 'package:shopping/constraints.dart';
 import '../product.dart';
 import 'main_product_item.dart';
 
-class TankMainPage extends StatelessWidget {
+class TankMainPage extends StatefulWidget {
   const TankMainPage({Key? key}) : super(key: key);
 
+  @override
+  State<TankMainPage> createState() => _TankMainPageState();
+}
 
+class _TankMainPageState extends State<TankMainPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(

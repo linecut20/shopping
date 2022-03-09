@@ -37,7 +37,6 @@ class MainPage extends StatelessWidget {
       body: Body(),
     );
   }
-
 }
 
 AppBar topAppBar() {
