@@ -3,12 +3,19 @@ import 'package:flutter/widgets.dart';
 import 'package:shopping/constraints.dart';
 import '../product.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   final Product product;
 
   const Body({
     required this.product,
     Key? key}) : super(key: key);
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  int itemCount = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +43,7 @@ class Body extends StatelessWidget {
                       )
                     ),
 
+                    //상품 상세 및 수량
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: defaultPadding),
                       child: Column(
@@ -43,15 +51,99 @@ class Body extends StatelessWidget {
                         children: [
                           SizedBox(height: size.height * 0.1),
                           Text("Size", style: TextStyle(color: Colors.black54)),
-                          Text("${product.size} cm",
+                          Text("${widget.product.size} cm",
                             style: Theme.of(context).textTheme.headline6!.copyWith(
                               fontWeight: FontWeight.bold,
                               color: Colors.black54
                             ),
                           ),
                           SizedBox(height: 20),
-                          Text(product.description, style: TextStyle(color: Colors.black54),),
+                          Text(widget.product.description, style: TextStyle(color: Colors.black54)),
+                          SizedBox(height: 50),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 30,
+                                height: 30,
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    padding: EdgeInsets.zero
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      if (itemCount > 1) itemCount--;
+                                    });
+                                  },
+                                  child: Icon(Icons.remove, color: Colors.black54),
+                                ),
+                              ),
+                              SizedBox(width: 10),
+                              Container(
+                                width: 30,
+                                height: 30,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.black12)
+                                ),
+                                child: Text(itemCount.toString().padLeft(2, "0")),
+                              ),
+                              SizedBox(width: 10),
+                              SizedBox(
+                                width: 30,
+                                height: 30,
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    padding: EdgeInsets.zero
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      itemCount++;
+                                    });
+                                  },
+                                  child: Icon(Icons.add, color: Colors.black54),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16)
+                                    )
+                                  ),
+                                  child: Icon(Icons.add_shopping_cart_outlined, color: Colors.blue),
+                                  onPressed: () {},
+                                ),
+                              ),
+                              SizedBox(width: 20),
 
+                              //구매버튼튼
+                             Expanded(
+                                child: SizedBox(
+                                  height: 50,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16)
+                                      )
+                                    ),
+                                    onPressed: () {},
+                                    child: Text("바로 구매", style: Theme.of(context).textTheme.headline6!.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold
+                                    )),
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -64,7 +156,7 @@ class Body extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("${product.title}",
+                      Text("${widget.product.title}",
                         style: Theme.of(context).textTheme.headline4!.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -83,7 +175,7 @@ class Body extends StatelessWidget {
                     children: [
                       Text("Price", style: TextStyle(color: Colors.white)),
                       SizedBox(height: 10),
-                      Text("\$${product.price}",
+                      Text("\$${widget.product.price}",
                         style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.bold,
                           color: Colors.white
@@ -97,7 +189,7 @@ class Body extends StatelessWidget {
                 Positioned(
                   right: size.width * 0.05,
                   top: size.height * 0.175,
-                  child: Image.asset(product.image,
+                  child: Image.asset(widget.product.image,
                     width: size.width * 0.45,
                     fit: BoxFit.fitWidth)
                 ),
