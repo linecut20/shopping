@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping/constraints.dart';
 
-void main() {
+main() {
   runApp(const MyApp());
 }
 
@@ -44,10 +44,6 @@ AppBar topAppBar() {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0,
-    leading: IconButton(
-      icon: SvgPicture.asset("assets/icons/back.svg"),
-      onPressed: () {},
-    ),
     actions: <Widget> [
       IconButton(
         icon: SvgPicture.asset("assets/icons/search.svg",

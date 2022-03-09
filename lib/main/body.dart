@@ -1,42 +1,87 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
-import 'package:shopping/main/main_product_item.dart';
-import '../product.dart';
-import 'categories.dart';
+import 'package:shopping/main/tank_main_page.dart';
 
-class Body extends StatelessWidget {
+final List<String> categories = ["탱크", "장갑차", "전함", "항공기"];
+
+class Body extends StatefulWidget {
   Body({Key? key}) : super(key: key);
 
   @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  int pageIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.all(defaultPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //상단부================
-          Text("Women",
+          Text("PraModel",
             style: Theme.of(context).textTheme.headline5!.copyWith(
               fontWeight: FontWeight.bold,
               color: textColor),
           ),
-          const Categories(),
+          Container(
+            height: 25,
+            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context, index) => buildCategory(index)
+            ),
+          ),
 
           //중단부================
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: defaultPadding),
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.92
-                ),
-                itemCount: products.length,
-                itemBuilder: (context, index) => MainProductItem(product: products[index]),
-              ),
-            ),
+            child: IndexedStack(
+              index: pageIndex,
+              children: [
+                //1번 페이지
+                TankMainPage(),
+                //2번 페이지
+                Container()
+              ],
+            )
           )
         ],
+      ),
+    );
+  }
+
+  Widget buildCategory(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          pageIndex = index;
+        });
+      },
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              categories[index],
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: pageIndex == index ? textColor : textLightColor
+              ),
+            ),
+
+            Container(
+                height: 3,
+                width: 40,
+                color: pageIndex == index ? Colors.blueGrey : Colors.transparent
+            )
+          ],
+        ),
       ),
     );
   }
