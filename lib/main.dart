@@ -1,9 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
+
 import 'main/body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping/constraints.dart';
 
 main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -22,7 +25,18 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: const MainPage()
+      home: FutureBuilder(
+        future: Firebase.initializeApp(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return MainPage();
+          } else {
+            return Container(
+              child: Text("로딩"),
+            );
+          }
+        },
+      )
     );
   }
 }

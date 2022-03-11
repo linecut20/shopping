@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shopping/constraints.dart';
-import '../product.dart';
+import '../model/product.dart';
 
 class Body extends StatefulWidget {
   final Product product;

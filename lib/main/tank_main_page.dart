@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
 
-import '../product.dart';
+import '../model/product.dart';
 import 'main_product_item.dart';
 
 class TankMainPage extends StatefulWidget {

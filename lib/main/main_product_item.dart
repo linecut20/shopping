@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
 import 'package:shopping/detail/detail_screen.dart';
-import '../product.dart';
+import '../model/product.dart';
 
 class MainProductItem extends StatelessWidget {
   final Product product;
@@ -23,7 +23,7 @@ class MainProductItem extends StatelessWidget {
             width: 180,
             height: 200,
             decoration: BoxDecoration(
-              color: product.color,
+              color: productColor(product.type),
               borderRadius: BorderRadius.circular(16)
             ),
             child: Image.asset(product.image),

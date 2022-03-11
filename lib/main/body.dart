@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
 import 'package:shopping/main/tank_main_page.dart';
 
+import 'armored_vehicle_page.dart';
+
 final List<String> categories = ["탱크", "장갑차", "전함", "항공기"];
 
 class Body extends StatefulWidget {
@@ -46,7 +48,7 @@ class _BodyState extends State<Body> {
                 //1번 페이지
                 TankMainPage(),
                 //2번 페이지
-                Container()
+                ArmoredVehiclePage()
               ],
             )
           )
