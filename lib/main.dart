@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping/constraints.dart';
 
-main() {
+Future<void>main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+      apiKey: "AIzaSyAdlstNDemqUaKumk6YNJue9uS1sCY88eE",
+      appId: "1:834179562996:android:ade7a5b8a7df9e34db4da1",
+      messagingSenderId: "834179562996",
+      projectId: "shopping-7172e"
+    )
+  );
   runApp(const MyApp());
 }
 
@@ -25,18 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: FutureBuilder(
-        future: Firebase.initializeApp(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return MainPage();
-          } else {
-            return Container(
-              child: Text("로딩"),
-            );
-          }
-        },
-      )
+      home: MainPage()
     );
   }
 }
