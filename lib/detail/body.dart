@@ -28,33 +28,23 @@ class _BodyState extends State<Body> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //상품명
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-                child: Text("${widget.product.title}",
-                  style: Theme.of(context).textTheme.headline4?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              SizedBox(height: 100),
+              SizedBox(height: 80),
               //가격
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-                child: Text("Price", style: TextStyle(color: Colors.white, fontSize: 20)),
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2),
+                child: Text("Price", style: TextStyle(color: Colors.white, fontSize: 24)),
               ),
               SizedBox(height: 3),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2),
                 child: Text(NumberFormat("###,###,###").format(widget.product.price),
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                  style: Theme.of(context).textTheme.headline4!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.bold
                   )
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
 
               //하단부
               Container(
@@ -70,6 +60,16 @@ class _BodyState extends State<Body> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 30),
+                    //상품명
+                    Text("${widget.product.title}",
+                      style: Theme.of(context).textTheme.headline5?.copyWith(
+                          color: Colors.black54,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    //사이즈
                     Text("Size", style: TextStyle(color: Colors.black54, fontSize: 16)),
                     Text("${widget.product.size} cm",
                       style: Theme.of(context).textTheme.headline6!.copyWith(
@@ -176,8 +176,8 @@ class _BodyState extends State<Body> {
 
           //상품이미지
           Positioned(
-            right: size.width * 0.05,
-            top: size.height * 0.125,
+            right: size.width * 0.09,
+            top: size.height * 0.05,
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(

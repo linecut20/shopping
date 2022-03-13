@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
+import 'package:shopping/main/air_main_page.dart';
+import 'package:shopping/main/ship_main_page.dart';
 
 import 'armored_main_page.dart';
 
@@ -45,7 +47,11 @@ class _BodyState extends State<Body> {
               index: pageIndex,
               children: [
                 //1번 페이지
-                ArmoredPage()
+                ArmoredPage(),
+                //2번 페이지
+                ShipMainPage(),
+                //3번 페이지
+                AirMainPage()
               ],
             )
           )
