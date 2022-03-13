@@ -9,10 +9,11 @@ Future<void>main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: FirebaseOptions(
-      apiKey: "AIzaSyAdlstNDemqUaKumk6YNJue9uS1sCY88eE",
-      appId: "1:834179562996:android:ade7a5b8a7df9e34db4da1",
-      messagingSenderId: "834179562996",
-      projectId: "shopping-7172e"
+        apiKey: "AIzaSyAdlstNDemqUaKumk6YNJue9uS1sCY88eE",
+        appId: "1:834179562996:android:ade7a5b8a7df9e34db4da1",
+        messagingSenderId: "834179562996",
+        projectId: "shopping-7172e",
+        storageBucket: "shopping-7172e.appspot.com"
     )
   );
   runApp(const MyApp());
@@ -21,7 +22,6 @@ Future<void>main() async{
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

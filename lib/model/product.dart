@@ -60,10 +60,10 @@ List<Product> products = [
 Color productColor(String type) {
   Color color;
   switch(type) {
-    case "tank": color = Colors.green; break;
-    case "armored_vehicle": color = Colors.lightGreen; break;
-    case "air": color = Colors.blue; break;
-    case "navy": color = Colors.indigo; break;
+    case "tank": color = Color(0xFF2E441F); break;
+    case "armored_vehicle": color = Color(0xFF43652A); break;
+    case "air": color = Color(0xABAAAAAA); break;
+    case "navy": color = Color(0x8F152179); break;
     default: color = Colors.blueGrey; break;
   }
 

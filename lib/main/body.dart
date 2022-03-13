@@ -4,7 +4,7 @@ import 'package:shopping/main/tank_main_page.dart';
 
 import 'armored_vehicle_page.dart';
 
-final List<String> categories = ["탱크", "장갑차", "전함", "항공기"];
+final List<String> categories = ["탱크", "장갑차/차량", "전함", "항공기"];
 
 class Body extends StatefulWidget {
   Body({Key? key}) : super(key: key);
