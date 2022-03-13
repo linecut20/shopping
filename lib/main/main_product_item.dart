@@ -28,8 +28,8 @@ class _MainProductItemState extends State<MainProductItem> {
           //배경 및 이미지
           Container(
             padding: EdgeInsets.symmetric(horizontal: defaultPadding),
-            width: 200,
-            height: 150,
+            width: 170,
+            height: 130,
             decoration: BoxDecoration(
               color: productColor(widget.product.type),
               borderRadius: BorderRadius.circular(16)
@@ -39,7 +39,7 @@ class _MainProductItemState extends State<MainProductItem> {
 
           //상품명
           Container(
-            width: 190,
+            width: 160,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

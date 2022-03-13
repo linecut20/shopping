@@ -31,12 +31,12 @@ class _BodyState extends State<Body> {
               SizedBox(height: 80),
               //가격
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2),
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
                 child: Text("Price", style: TextStyle(color: Colors.white, fontSize: 24)),
               ),
               SizedBox(height: 3),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultPadding * 2),
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
                 child: Text(NumberFormat("###,###,###").format(widget.product.price),
                   style: Theme.of(context).textTheme.headline4!.copyWith(
                     color: Colors.white,
@@ -176,7 +176,7 @@ class _BodyState extends State<Body> {
 
           //상품이미지
           Positioned(
-            right: size.width * 0.09,
+            right: size.width * 0.05,
             top: size.height * 0.05,
             child: Container(
               decoration: BoxDecoration(
@@ -185,7 +185,7 @@ class _BodyState extends State<Body> {
                   width: 2
                 )
               ),
-              child: storageImageMaker(image: widget.product.image, width: size.width * 0.45)
+              child: storageImageMaker(image: widget.product.image, width: size.width * 0.5)
             ),
           )
         ],

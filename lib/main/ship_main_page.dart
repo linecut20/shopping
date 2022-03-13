@@ -39,7 +39,7 @@ class _ShipMainPageState extends State<ShipMainPage> {
           return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.03
+                childAspectRatio: 0.8
             ),
             itemCount: products.length,
             itemBuilder: (context, index) => MainProductItem(product: products[index]),

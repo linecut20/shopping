@@ -79,7 +79,7 @@ class _BodyState extends State<Body> {
                   color: pageIndex == index ? textColor : textLightColor
               ),
             ),
-
+            SizedBox(height: 3),
             Container(
                 height: 3,
                 width: 40,
