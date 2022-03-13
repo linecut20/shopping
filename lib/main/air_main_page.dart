@@ -26,7 +26,7 @@ class _AirMainPageState extends State<AirMainPage> {
               i["description"],
               i["price"] as int,
               i["size"],
-              i["id"] as int,
+              i["id"],
               i["type"],
               i["image"],
               i["subImage"]

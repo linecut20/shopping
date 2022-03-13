@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/constraints.dart';
-import 'package:shopping/main/tank_main_page.dart';
 
-import 'armored_vehicle_page.dart';
+import 'armored_main_page.dart';
 
-final List<String> categories = ["탱크", "장갑차/차량", "전함", "항공기"];
+final List<String> categories = ["장갑차량", "전함", "항공기"];
 
 class Body extends StatefulWidget {
   Body({Key? key}) : super(key: key);
@@ -46,9 +45,7 @@ class _BodyState extends State<Body> {
               index: pageIndex,
               children: [
                 //1번 페이지
-                TankMainPage(),
-                //2번 페이지
-                ArmoredVehiclePage()
+                ArmoredPage()
               ],
             )
           )

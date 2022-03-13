@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Product {
-  final String image, subImage, title, description, type, size;
-  final int price, id;
+  final String image, subImage, title, description, type, size, id;
+  final int price;
 
   Product(this.title, this.description, this.price, this.size, this.id, this.type, this.image, this.subImage,);
 }
@@ -11,7 +11,7 @@ List<Product> products = [
   Product(
     "Office Code",
     "dummyText",
-    234, "12", 1,
+    234, "12", "1",
     "",
     "assets/images/bag_1.png",
     ""
@@ -19,7 +19,7 @@ List<Product> products = [
   Product(
     "Belt Bag",
     "dummyText",
-    182, "10", 2,
+    182, "10", "2",
     "",
     "assets/images/bag_2.png",
     ""
@@ -27,14 +27,14 @@ List<Product> products = [
   Product(
     "Black Bag",
     "dummyText",
-    254, "14", 3,
+    254, "14", "3",
     "",
     "assets/images/bag_3.png",
     ""
   ),
   Product(
     "Brown Bag",
-    "dummyText", 277, "12", 4,
+    "dummyText", 277, "12", "4",
     "",
     "assets/images/bag_4.png",
     ""
@@ -42,7 +42,7 @@ List<Product> products = [
   Product(
     "Red Bag",
     "dummyText",
-    211, "12", 5,
+    211, "12", "5",
     "",
     "assets/images/bag_5.png",
     ""
@@ -50,7 +50,7 @@ List<Product> products = [
   Product(
     "Dark Grey Bag",
     "dummyText",
-    302, "11", 6,
+    302, "11", "6",
     "",
     "assets/images/bag_6.png",
     ""

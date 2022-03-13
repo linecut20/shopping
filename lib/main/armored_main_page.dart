@@ -4,20 +4,20 @@ import 'package:shopping/constraints.dart';
 import '../model/product.dart';
 import 'main_product_item.dart';
 
-class ArmoredVehiclePage extends StatefulWidget {
+class ArmoredPage extends StatefulWidget {
 
-  ArmoredVehiclePage({Key? key}) : super(key: key);
+  ArmoredPage({Key? key}) : super(key: key);
 
   @override
-  State<ArmoredVehiclePage> createState() => _ArmoredVehiclePage();
+  State<ArmoredPage> createState() => _ArmoredPage();
 }
 
-class _ArmoredVehiclePage extends State<ArmoredVehiclePage> {
+class _ArmoredPage extends State<ArmoredPage> {
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("armored_vehicle").orderBy("release", descending: true).snapshots(),
+      stream: FirebaseFirestore.instance.collection("armored").orderBy("release", descending: true).snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot>snapshot) {
         final List<Product>products = [];
 
@@ -27,7 +27,7 @@ class _ArmoredVehiclePage extends State<ArmoredVehiclePage> {
             i["description"],
             i["price"] as int,
             i["size"],
-            i["id"] as int,
+            i["id"],
             i["type"],
             i["image"],
             i["subImage"]
