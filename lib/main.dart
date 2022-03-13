@@ -54,21 +54,20 @@ AppBar topAppBar() {
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0,
-    actions: <Widget> [
+    actions: [
       IconButton(
-        icon: SvgPicture.asset("assets/icons/search.svg",
-          color: textColor,
+        icon: Icon(Icons.search,
+          color: Colors.black54,
         ),
         onPressed: () {},
       ),
       IconButton(
-        icon: SvgPicture.asset("assets/icons/cart.svg",
-          color: textColor,
+        icon: Icon(Icons.shopping_cart_outlined,
+            color: Colors.black54,
         ),
-        color: textColor,
         onPressed: () {},
       ),
-      SizedBox(width: 10,)
+      SizedBox(width: 10)
     ],
   );
 }
