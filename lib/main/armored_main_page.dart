@@ -42,6 +42,7 @@ class _ArmoredPage extends State<ArmoredPage> {
                 crossAxisCount: 2,
                 childAspectRatio: 0.8
             ),
+            cacheExtent: 9999,
             itemCount: products.length,
             itemBuilder: (context, index) => MainProductItem(product: products[index]),
           );
