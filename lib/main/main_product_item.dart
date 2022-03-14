@@ -27,7 +27,7 @@ class _MainProductItemState extends State<MainProductItem> {
         children: [
           //배경 및 이미지
           Container(
-            padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+            padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
             width: 170,
             height: 130,
             decoration: BoxDecoration(
@@ -47,6 +47,7 @@ class _MainProductItemState extends State<MainProductItem> {
                   padding: const EdgeInsets.symmetric(vertical: 3),
                   child: Text(widget.product.title,
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       color: textLightColor
                     ),
                   ),

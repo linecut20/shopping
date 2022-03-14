@@ -19,7 +19,6 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(defaultPadding),
       child: Column(
@@ -29,10 +28,10 @@ class _BodyState extends State<Body> {
           Text("PraModel",
             style: Theme.of(context).textTheme.headline5!.copyWith(
               fontWeight: FontWeight.bold,
-              color: textColor),
+              color: textHighLighColor),
           ),
           Container(
-            height: 25,
+            height: 30,
             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -68,7 +67,7 @@ class _BodyState extends State<Body> {
         });
       },
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
+        padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -76,10 +75,10 @@ class _BodyState extends State<Body> {
               categories[index],
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: pageIndex == index ? textColor : textLightColor
+                  color: pageIndex == index ? textHighLighColor : textLightColor
               ),
             ),
-            SizedBox(height: 3),
+            SizedBox(height: 10),
             Container(
                 height: 3,
                 width: 40,

@@ -28,9 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'shopping app',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white
-        ),
+        appBarTheme: const AppBarTheme(),
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
       home: MainPage()
@@ -44,6 +42,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: topAppBar(),
       body: Body(),
     );
@@ -52,18 +51,18 @@ class MainPage extends StatelessWidget {
 
 AppBar topAppBar() {
   return AppBar(
-    backgroundColor: Colors.transparent,
+    backgroundColor: backgroundColor,
     elevation: 0,
     actions: [
       IconButton(
         icon: Icon(Icons.search,
-          color: Colors.black54,
+          color: textLightColor,
         ),
         onPressed: () {},
       ),
       IconButton(
         icon: Icon(Icons.shopping_cart_outlined,
-            color: Colors.black54,
+            color: textLightColor,
         ),
         onPressed: () {},
       ),
