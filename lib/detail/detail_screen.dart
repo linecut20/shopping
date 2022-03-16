@@ -14,7 +14,7 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: productColor(product.type),
       appBar: AppBar(
-        backgroundColor: productColor(product.type),
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.chevron_left_outlined, color: Colors.white),

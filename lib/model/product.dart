@@ -10,9 +10,9 @@ class Product {
 Color productColor(String type) {
   Color color;
   switch(type) {
-    case "armored": color = Color(0xFF2E441F); break;
+    case "armored": color = Color(0x7768B80D); break;
     case "air": color = Color(0xFFAAAAAA); break;
-    case "ship": color = Color(0xFF152179); break;
+    case "ship": color = Color(0x744159C6); break;
     default: color = Colors.blueGrey; break;
   }
 

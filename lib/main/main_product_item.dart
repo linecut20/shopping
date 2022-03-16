@@ -56,7 +56,7 @@ class _MainProductItemState extends State<MainProductItem> {
                 Text(NumberFormat('###,###,###,###').format(widget.product.price),
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: textColor,
+                    color: textHighLighColor,
                   ),
                 ),
               ],

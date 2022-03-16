@@ -59,6 +59,7 @@ class _BodyState extends State<Body> {
     );
   }
 
+  //상단부 카테고리
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {
@@ -75,7 +76,7 @@ class _BodyState extends State<Body> {
               categories[index],
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: pageIndex == index ? textHighLighColor : textLightColor
+                  color: pageIndex == index ? textLightColor : textColor
               ),
             ),
             SizedBox(height: 10),
