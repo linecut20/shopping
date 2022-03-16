@@ -13,41 +13,51 @@ class ArmoredPage extends StatefulWidget {
 }
 
 class _ArmoredPage extends State<ArmoredPage> {
+  var getDataTask;
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding),
       child: StreamBuilder(
-        stream: FirebaseFirestore.instance.collection("armored").orderBy("release", descending: true).snapshots(),
+        stream: getDataTask,
         builder: (context, AsyncSnapshot<QuerySnapshot>snapshot) {
-          final List<Product>products = [];
+          if (!snapshot.hasData) return Container();
+          else {
+            var datas = snapshot.requireData;
 
-          for (var i in snapshot.requireData.docs) {
-            var product = Product(
-              i["title"],
-              i["description"],
-              i["price"] as int,
-              i["size"],
-              i["id"],
-              i["type"],
-              i["image"],
-              i["subImage"]
+            return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.8
+              ),
+              cacheExtent: 9999,
+              itemCount: datas.size,
+              itemBuilder: (context, index) => MainProductItem(
+                product: Product(
+                  datas.docs[index]["title"],
+                  datas.docs[index]["description"],
+                  datas.docs[index]["price"] as int,
+                  datas.docs[index]["size"],
+                  datas.docs[index]["id"],
+                  datas.docs[index]["type"],
+                  datas.docs[index]["image"],
+                  datas.docs[index]["subImage"],
+                ),
+              ),
             );
-            products.add(product);
           }
-
-          return GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.8
-            ),
-            cacheExtent: 9999,
-            itemCount: products.length,
-            itemBuilder: (context, index) => MainProductItem(product: products[index]),
-          );
         },
       ),
     );
+  }
+
+  void getData() async{
+    getDataTask = await FirebaseFirestore.instance.collection("armored").orderBy("release", descending: true).snapshots();
   }
 }
