@@ -14,6 +14,7 @@ class ArmoredPage extends StatefulWidget {
 
 class _ArmoredPage extends State<ArmoredPage> {
   var getDataTask;
+  
   @override
   void initState() {
     super.initState();
@@ -57,7 +58,7 @@ class _ArmoredPage extends State<ArmoredPage> {
     );
   }
 
-  void getData() async{
-    getDataTask = await FirebaseFirestore.instance.collection("armored").orderBy("release", descending: true).snapshots();
+  void getData() {
+    getDataTask = FirebaseFirestore.instance.collection("armored").orderBy("release", descending: true).snapshots();
   }
 }

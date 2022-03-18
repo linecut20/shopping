@@ -56,7 +56,7 @@ class _AirMainPageState extends State<AirMainPage> {
     );
   }
 
-  void getData() async{
-    getDataTask = await FirebaseFirestore.instance.collection("air").orderBy("release", descending: true).snapshots();
+  void getData() {
+    getDataTask = FirebaseFirestore.instance.collection("air").orderBy("release", descending: true).snapshots();
   }
 }

@@ -57,7 +57,7 @@ class _ShipMainPageState extends State<ShipMainPage> {
     );
   }
 
-  void getData() async{
-    getDataTask = await FirebaseFirestore.instance.collection("ship").orderBy("release", descending: true).snapshots();
+  void getData() {
+    getDataTask = FirebaseFirestore.instance.collection("ship").orderBy("release", descending: true).snapshots();
   }
 }
