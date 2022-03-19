@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping/constraints.dart';
 
+import 'main/splash_page.dart';
+
 Future<void>main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(),
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: MainPage()
+      home: SplashPage()
     );
   }
 }
